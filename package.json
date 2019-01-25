@@ -1,0 +1,31 @@
+{
+  "name": "diningroom",
+  "version": "1.0.0",
+  "description": "这是点餐扫码数据系统",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1xjh/DiningRoom-api.git"
+  },
+  "keywords": [
+    "点餐",
+    "diancan",
+    "扫码"
+  ],
+  "author": "xiejiahui",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/1xjh/DiningRoom-api/issues"
+  },
+  "homepage": "https://github.com/1xjh/DiningRoom-api#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
+  }
+}
