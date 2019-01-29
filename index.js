@@ -7,6 +7,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const categoryRouter = require("./routes/admin/category");
 const adminRouter = require("./routes/admin/admin");
+const dishRouter = require("./routes/admin/dish");
 //允许以下地址来访问 服务器
 var app = express();
 //启动主服务器
@@ -25,5 +26,6 @@ app.use(cors({
 // 挂载路由器
 app.use('/admin/category',categoryRouter);
 app.use('/admin',adminRouter);
+app.use('/admin/dish',dishRouter)
 
 
