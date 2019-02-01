@@ -13,8 +13,7 @@ router.get('/', (req, res) => {
     var sql = "SELECT * FROM dr_category ORDER BY cid"
     pool.query(sql, (err, result) => {
         if (err) throw err;
-        var jsonDate = JSON.stringify(result);
-        res.send('daData(' + jsonDate + ')');
+        res.send(result);
     })
 })
 
@@ -62,7 +61,7 @@ router.post('/',(req,res)=>{
     var sql="INSERT INTO dr_category SET ?"
     pool.query(sql,data,(err,result)=>{//注意此次SQL语句的简写
         if(err)throw err
-        res.send({code:200,msg:'1 category added'})
+        res.send({code:200,msg:'1 category added',cid:result.insertId})
     })
 })
 
@@ -81,7 +80,7 @@ router.put('/',(req,res)=>{
     pool.query(sql,[data,data.cid],(err,result)=>{
         if(err)throw err;
         if(result.changedRows>0){ //实际更新了一行
-            res.send({code:200,msg:'1 category modified'})
+            res.send({code:200,msg:'1 category modified',cid:result.insertId})
         }else if(result.affectedRows==0){
             res.send({code:400,msg:'category not exists'})
         }else if(result.affectedRows==1 && result.changedRows==0){ //影响到1行 ，但修改了0行-新值与旧值完全一样

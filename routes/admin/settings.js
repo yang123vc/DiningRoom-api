@@ -14,10 +14,10 @@ router.get('/',(req,res)=>{
 
 
 
-router.get('/',(req,res)=>{
+router.put('/',(req,res)=>{
     pool.query('UPDATE dr_settings SET ?',req.body,(err,result)=>{
         if(err) throw err
-        res.send({code:200,msg:'stiing updated succ'})
+        res.send({code:200,msg:'stting updated succ'});
     })
 })
 
