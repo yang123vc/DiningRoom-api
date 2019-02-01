@@ -1,7 +1,9 @@
 console.log('准备启动API服务器...')
 console.log(new Date().toLocaleString());
 
-const PORT = 8090;
+//const PORT = 8090;
+const PORT = 5050
+
 const express = require('express');
 const cors = require("cors");
 const bodyParser = require("body-parser");
